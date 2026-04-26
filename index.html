@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宅宅勇者大冒險 - 官方網站</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ===== Toast 通知：取代所有 alert ===== -->
+    <div id="toast" class="toast"></div>
+
+    <header class="hero-section">
+        <div class="character-banner">
+            <img src="images/home.jpg" alt="法師小隊" class="banner-img">
+        </div>
+        <nav class="main-nav">
+            <a href="#" class="nav-item">首頁</a>
+            <a href="#" class="nav-item">劇情介紹</a>
+            <a href="#" class="nav-item">登場人物</a>
+            <a href="#" class="nav-item">遊戲動畫</a>
+            <a href="#" class="nav-item">販售資訊</a>
+        </nav>
+    </header>
+
+    <main class="content-wrapper">
+
+        <!-- INFO -->
+        <section class="info-box">
+            <h2 class="section-title">INFO</h2>
+            <div class="inner-content">
+                <table class="info-table">
+                    <tr><th>對應平台：</th><td>PC / PS5 / Nintendo Switch</td></tr>
+                    <tr><th>遊戲類型：</th><td>宅宅拯救世界 RPG</td></tr>
+                    <tr><th>發售日期：</th><td>2026年 4月預定</td></tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- STORY -->
+        <section class="info-box">
+            <h2 class="section-title">STORY</h2>
+            <div class="inner-content">
+                <p class="story-quote">「那是宅宅最後的底線...」</p>
+                <p>某個平凡的午後，魔王突然現身，搶走了哥哥心愛的電腦。沒有了電腦，生活就失去了靈魂！</p>
+                <p>為了奪回主機，宅宅哥哥決定武裝起自己，帶著弟妹踏上冒險之旅...</p>
+            </div>
+        </section>
+
+        <!-- 登場人物：妹妹（左）、哥哥（中）、弟弟（右） -->
+        <section class="info-box">
+            <h2 class="section-title">登場人物</h2>
+            <div class="characters-grid">
+
+                <!-- 妹妹（左） -->
+                <div class="char-card">
+                    <div class="char-avatar">
+                        <img src="images/sister.PNG" class="char-img" id="sister-pic" alt="妹妹">
+                    </div>
+                    <h3>妹妹</h3>
+                    <div class="tag">N2 認證</div>
+                    <div class="hp-container">
+                        <span class="hp-label">HP</span>
+                        <div class="hp-bar-bg">
+                            <div id="sister-hp-fill" class="hp-bar-fill" style="width: 60%;"></div>
+                        </div>
+                    </div>
+                    <div class="item-box">
+                        <img src="images/rice_balls.PNG" class="onigiri-btn" onclick="heal('sister')" alt="飯糰">
+                        <span>補血！</span>
+                    </div>
+                </div>
+
+                <!-- 哥哥（中） -->
+                <div class="char-card char-card--hero">
+                    <div class="char-avatar">
+                        <img src="images/hero.PNG" class="char-img" id="hero-pic" alt="哥哥">
+                    </div>
+                    <h3>哥哥</h3>
+                    <div class="tag tag--hero">主角</div>
+                    <div class="hp-container">
+                        <span class="hp-label">HP</span>
+                        <div class="hp-bar-bg">
+                            <div id="hero-hp-fill" class="hp-bar-fill" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                    <div class="item-box">
+                        <img src="images/rice_balls.PNG" class="onigiri-btn" onclick="heal('hero')" alt="飯糰">
+                        <span>補血！</span>
+                    </div>
+                </div>
+
+                <!-- 弟弟（右） -->
+                <div class="char-card">
+                    <div class="char-avatar">
+                        <img src="images/brother.PNG" class="char-img" id="brother-pic" alt="弟弟">
+                    </div>
+                    <h3>弟弟</h3>
+                    <div class="tag">搬運擔當</div>
+                    <div class="hp-container">
+                        <span class="hp-label">HP</span>
+                        <div class="hp-bar-bg">
+                            <div id="brother-hp-fill" class="hp-bar-fill" style="width: 40%;"></div>
+                        </div>
+                    </div>
+                    <div class="item-box">
+                        <img src="images/rice_balls.PNG" class="onigiri-btn" onclick="heal('brother')" alt="飯糰">
+                        <span>補血！</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 販售資訊：PS5 + Switch -->
+        <section class="info-box">
+            <h2 class="section-title">販售資訊</h2>
+            <div class="platforms-grid">
+                <div class="platform-card">
+                    <div class="platform-img-placeholder">
+                        <img src="images/ps5_cover.png" alt="PS5版封面" class="platform-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div class="platform-placeholder-text">
+                            <span class="platform-icon">🎮</span>
+                            <span>PS5 版</span>
+                            <span class="platform-date">2026.04 發售予定</span>
+                        </div>
+                    </div>
+                    <div class="platform-info">
+                        <h4>PlayStation 5</h4>
+                        <p>支援 DualSense 觸覺回饋</p>
+                    </div>
+                </div>
+                <div class="platform-card">
+                    <div class="platform-img-placeholder">
+                        <img src="images/switch_cover.png" alt="Switch版封面" class="platform-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div class="platform-placeholder-text">
+                            <span class="platform-icon">🕹️</span>
+                            <span>Switch 版</span>
+                            <span class="platform-date">2026.04 發售予定</span>
+                        </div>
+                    </div>
+                    <div class="platform-info">
+                        <h4>Nintendo Switch</h4>
+                        <p>支援 Joy-Con 體感操作</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== 事前登錄區：與 footer 連接 ===== -->
+    <div class="pre-reg-section">
+        <div class="pre-reg-inner">
+            <h3 class="pre-reg-title">⚔️ 冒險者事前登錄</h3>
+            <p class="pre-reg-desc">登錄即可獲得限量初回特典裝備！</p>
+            <div class="pre-reg-form">
+                <input type="email" id="reg-email" placeholder="email@example.com" class="reg-input">
+                <button class="reg-btn" onclick="submitReg()">立即登錄</button>
+            </div>
+            <p id="reg-message" class="reg-message"></p>
+        </div>
+
+        <footer class="footer-grass">
+            <img src="images/grass_footer.PNG" class="footer-img" alt="裝飾圖案">
+        </footer>
+    </div>
+
+    <script>
+        // ===== Toast 通知：取代 alert =====
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.textContent = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2500);
+        }
+
+        // ===== 補血功能（共用，傳入角色名稱）=====
+        const charNames = { hero: '哥哥', sister: '妹妹', brother: '弟弟' };
+
+        function heal(character) {
+            const hpFill = document.getElementById(character + '-hp-fill');
+            const pic = document.getElementById(character + '-pic');
+            const currentWidth = parseInt(hpFill.style.width);
+
+            if (currentWidth < 100) {
+                hpFill.style.width = Math.min(currentWidth + 25, 100) + '%';
+                // 補血動畫
+                pic.style.animation = 'none';
+                void pic.offsetWidth;
+                pic.style.animation = 'bounce 0.5s ease';
+            } else {
+                showToast(charNames[character] + ' 已經吃飽了！');
+            }
+        }
+
+        // ===== 事前登錄驗證：取代 alert =====
+        function submitReg() {
+            const email = document.getElementById('reg-email').value.trim();
+            const emailRule = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const msg = document.getElementById('reg-message');
+
+            if (!email) {
+                msg.textContent = '請輸入 Email！';
+                msg.className = 'reg-message error';
+                return;
+            }
+            if (!emailRule.test(email)) {
+                msg.textContent = '請輸入正確的 Email 格式！';
+                msg.className = 'reg-message error';
+                return;
+            }
+
+            msg.textContent = '✅ 登錄成功！限量裝備等你來領！';
+            msg.className = 'reg-message success';
+            document.getElementById('reg-email').value = '';
+        }
+    </script>
+</body>
+</html>

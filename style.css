@@ -1,0 +1,473 @@
+/* --- 基礎設定 --- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Zen Maru Gothic', sans-serif;
+    background-image: url('images/background.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #aaa;
+    background-blend-mode: multiply;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ===== Toast 通知 ===== */
+.toast {
+    position: fixed;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-20px);
+    background: rgba(30, 30, 30, 0.92);
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-size: 15px;
+    z-index: 99999;
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    white-space: nowrap;
+}
+.toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* ===== 統一寬版容器 ===== */
+.hero-section, .content-wrapper, .pre-reg-section {
+    width: 90%;
+    max-width: 1100px;
+}
+
+/* ===== 頂部區塊 ===== */
+.hero-section {
+    background: #87CEEB url('images/sky_bg.png') bottom repeat-x;
+    text-align: center;
+    border-radius: 15px 15px 0 0;
+    overflow: hidden;
+}
+
+.banner-img { width: 100%; height: auto; }
+
+.main-nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background: #fdf5e6;
+}
+
+.nav-item {
+    background: #f8d7b0;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    color: #5d4037;
+    font-weight: bold;
+    border: 2px solid #e6b38a;
+    transition: all 0.3s;
+    box-shadow: 0 4px 0 #8b572a;
+    cursor: pointer;
+    font-family: 'Zen Maru Gothic', sans-serif;
+}
+
+.nav-item:hover {
+    background-color: #fff;
+    color: #ff6347;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* ===== 中間內容區 ===== */
+.content-wrapper {
+    background-color: rgba(255, 250, 240, 0.93);
+    background-image: radial-gradient(#fffaf0 70%, #fdf5e6 100%);
+    padding: 40px 0;
+    min-height: 100vh;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    backdrop-filter: blur(5px);
+    position: relative;
+    border-left: 1px solid rgba(139, 87, 42, 0.3);
+    border-right: 1px solid rgba(139, 87, 42, 0.3);
+}
+
+.content-wrapper::before {
+    content: '📜';
+    position: absolute;
+    left: -50px;
+    top: 50px;
+    font-size: 50px;
+    filter: drop-shadow(5px 5px 0px rgba(0,0,0,0.1));
+}
+
+/* ===== 標題 ===== */
+.section-title {
+    text-align: center;
+    background: #5d4037;
+    color: #fffaf0;
+    padding: 10px 25px;
+    border-radius: 5px;
+    display: block;
+    margin: 30px auto;
+    width: fit-content;
+    box-shadow: 4px 4px 0px #e6b38a;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.info-box {
+    margin: 30px 40px;
+    padding: 20px;
+    border: 3px double #8b572a;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.inner-content {
+    padding: 15px 40px;
+    line-height: 1.8;
+    color: #5d4037;
+}
+
+/* ===== INFO 表格（移除 inline style）===== */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.info-table th {
+    text-align: left;
+    padding: 5px 10px 5px 0;
+    color: #8b572a;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.info-table td {
+    padding: 5px;
+    color: #5d4037;
+}
+
+/* ===== STORY ===== */
+.story-quote {
+    text-align: center;
+    font-weight: bold;
+    color: #8b572a;
+}
+
+/* ===== 角色卡片 ===== */
+.characters-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 0 40px;
+}
+
+.char-card {
+    background: #fff;
+    border: 2px solid #8b572a;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.char-card:hover {
+    transform: translateY(-10px);
+    background: #fffdf9;
+}
+
+/* 哥哥（主角）卡片強調 */
+.char-card--hero {
+    border: 3px solid #ff6347;
+    background: #fffaf7;
+    box-shadow: 0 8px 20px rgba(255, 99, 71, 0.2);
+}
+
+.char-avatar {
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.char-img {
+    width: 150px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.char-img:hover {
+    transform: scale(1.1) translateY(-5px);
+    filter: drop-shadow(0 10px 10px rgba(0,0,0,0.2));
+}
+
+/* ===== 標籤 ===== */
+.tag {
+    display: inline-block;
+    background: #f8d7b0;
+    color: #5d4037;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    border: 1px solid #e6b38a;
+}
+
+.tag--hero {
+    background: #ff6347;
+    color: #fff;
+    border-color: #e6b38a;
+}
+
+/* ===== HP 與補血 ===== */
+.hp-container {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.hp-label {
+    font-size: 13px;
+    font-weight: bold;
+    color: #8b572a;
+}
+
+.hp-bar-bg {
+    width: 150px;
+    height: 15px;
+    background: #555;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.hp-bar-fill {
+    height: 100%;
+    background: linear-gradient(to right, #ff4e50, #f9d423);
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.item-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+    font-size: 13px;
+    color: #8b572a;
+}
+
+.onigiri-btn {
+    width: 50px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.onigiri-btn:hover {
+    transform: scale(1.2);
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* ===== 販售資訊：PS5 / Switch ===== */
+.platforms-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 0 40px 20px;
+}
+
+.platform-card {
+    border: 2px solid #8b572a;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+}
+
+.platform-card:hover {
+    transform: translateY(-5px);
+}
+
+.platform-img-placeholder {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    background: linear-gradient(135deg, #f8d7b0, #e6b38a);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.platform-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.platform-placeholder-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: #5d4037;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.platform-icon { font-size: 48px; }
+
+.platform-date {
+    font-size: 13px;
+    background: #5d4037;
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.platform-info {
+    padding: 15px 20px;
+    text-align: center;
+}
+
+.platform-info h4 {
+    margin: 0 0 5px 0;
+    color: #5d4037;
+    font-size: 16px;
+}
+
+.platform-info p {
+    margin: 0;
+    font-size: 13px;
+    color: #8b572a;
+}
+
+/* ===== 事前登錄區（與 footer 連接）===== */
+.pre-reg-section {
+    background: linear-gradient(180deg, #5d4037 0%, #3e2723 100%);
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+    width: 90%;
+    max-width: 1100px;
+}
+
+.pre-reg-inner {
+    padding: 50px 40px 40px;
+    text-align: center;
+}
+
+.pre-reg-title {
+    color: #f8d7b0;
+    font-size: 1.8rem;
+    margin: 0 0 10px 0;
+    letter-spacing: 2px;
+}
+
+.pre-reg-desc {
+    color: #e6b38a;
+    margin: 0 0 25px 0;
+    font-size: 15px;
+}
+
+.pre-reg-form {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.reg-input {
+    padding: 12px 20px;
+    border-radius: 50px;
+    border: 2px solid #e6b38a;
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    font-size: 15px;
+    width: 280px;
+    outline: none;
+    font-family: 'Zen Maru Gothic', sans-serif;
+}
+
+.reg-input::placeholder { color: #c4a882; }
+
+.reg-input:focus {
+    border-color: #f8d7b0;
+    background: rgba(255,255,255,0.15);
+}
+
+.reg-btn {
+    padding: 12px 30px;
+    border-radius: 50px;
+    border: none;
+    background: #ff6347;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Zen Maru Gothic', sans-serif;
+    box-shadow: 0 4px 0 #c0392b;
+    transition: all 0.2s;
+}
+
+.reg-btn:hover {
+    background: #ff7b63;
+    transform: translateY(-2px);
+}
+
+.reg-btn:active {
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+.reg-message {
+    margin-top: 16px;
+    font-size: 14px;
+    min-height: 20px;
+}
+
+.reg-message.success { color: #a5d6a7; }
+.reg-message.error { color: #ef9a9a; }
+
+/* ===== Footer（連接事前登錄區）===== */
+.footer-grass {
+    height: 120px;
+    background-image: url('images/grass_footer.png');
+    background-repeat: repeat-x;
+    background-position: bottom;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    border-radius: 0 0 15px 15px;
+    overflow: hidden;
+}
+
+.footer-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===== RWD ===== */
+@media (max-width: 768px) {
+    .characters-grid { grid-template-columns: 1fr; padding: 0 20px; }
+    .platforms-grid { grid-template-columns: 1fr; padding: 0 20px; }
+    .main-nav { flex-wrap: wrap; gap: 8px; }
+    .pre-reg-form { flex-direction: column; align-items: center; }
+    .reg-input { width: 100%; max-width: 300px; }
+}
