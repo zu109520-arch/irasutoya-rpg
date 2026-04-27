@@ -354,7 +354,7 @@ body {
 .platform-img-placeholder {
     position: relative;
     width: 100%;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 3 / 4;
     background: linear-gradient(135deg, #f8d7b0, #e6b38a);
     display: flex;
     justify-content: center;
