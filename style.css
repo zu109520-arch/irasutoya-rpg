@@ -107,6 +107,12 @@ body {
     filter: drop-shadow(5px 5px 0px rgba(0,0,0,0.1));
 }
 
+/* 防止水平溢出 */
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
 /* ===== 標題 ===== */
 .section-title {
     text-align: center;
@@ -516,11 +522,41 @@ body {
 
 /* ===== RWD ===== */
 @media (max-width: 768px) {
-    .characters-grid { grid-template-columns: 1fr; padding: 0 20px; }
-    .platforms-grid { grid-template-columns: 1fr; padding: 0 20px; }
-    .main-nav { flex-wrap: wrap; gap: 8px; }
+    /* 隱藏卷軸裝飾 */
+    .content-wrapper::before { display: none; }
+
+    /* 縮小 info-box 的 margin/padding */
+    .info-box { margin: 20px 12px; padding: 12px; }
+    .inner-content { padding: 10px 12px; }
+
+    /* 角色與平台格線 */
+    .characters-grid { grid-template-columns: 1fr; padding: 0 12px; }
+    .platforms-grid { grid-template-columns: 1fr; padding: 0 12px; }
+
+    /* 導覽列 */
+    .main-nav { flex-wrap: wrap; gap: 8px; padding: 10px 8px; }
+    .nav-item { padding: 8px 14px; font-size: 14px; }
+
+    /* 事前登錄 */
     .pre-reg-form { flex-direction: column; align-items: center; }
     .reg-input { width: 100%; max-width: 300px; }
-    .banner-img { width: 90%; }
-    .video-wrapper { padding: 20px; }
+    .pre-reg-inner { padding: 30px 20px 30px; }
+
+    /* 影片 */
+    .video-wrapper { padding: 12px; }
+    .video-label { font-size: 13px; text-align: center; padding: 0 10px; }
+
+    /* 表格文字不強制斷行 */
+    .info-table td { word-break: keep-all; }
+    .info-table th { white-space: nowrap; }
+
+    /* 標題 */
+    .section-title { font-size: 1.2rem; }
+
+    /* 角色圖片 */
+    .char-img { width: 160px; }
+    .char-avatar { height: 180px; }
+
+    /* HP bar */
+    .hp-bar-bg { width: 120px; }
 }
