@@ -1,8 +1,8 @@
-# 🗡️ 宅宅勇者大冒險 | RPG 遊戲官方網站
+# 宅宅勇者大冒險 RPG 遊戲官方網站
 
-一個以 Vanilla HTML / CSS / JavaScript 建構的 RPG 遊戲主題宣傳網站，展示不依賴框架的基礎前端能力。
+一個以 Vanilla HTML / CSS / JavaScript 建構的 RPG 遊戲主題宣傳網站。
 
-🔗 **Live Demo：** [zu109520-arch.github.io/irasutoya-rpg](https://zu109520-arch.github.io/irasutoya-rpg)
+**Live Demo：** [zu109520-arch.github.io/irasutoya-rpg](https://zu109520-arch.github.io/irasutoya-rpg)
 
 ---
 
@@ -24,8 +24,6 @@
 | 結構 | HTML5 |
 | 樣式 | CSS3（Flexbox / Grid / CSS 變數） |
 | 互動 | Vanilla JavaScript |
-| 字型 | Google Fonts（Zen Maru Gothic） |
-| 部署 | GitHub Pages |
 
 ---
 
@@ -54,18 +52,7 @@
 
 ## 本機執行
 
-直接用瀏覽器開啟 `index.html` 即可，無需安裝任何依賴。
+下載後直接用瀏覽器開啟 `index.html` 即可。
 
-```bash
-git clone https://github.com/zu109520-arch/irasutoya-rpg.git
-cd irasutoya-rpg
-# 用瀏覽器開啟 index.html
-```
 
----
 
-## 作者
-
-**羅子晴** — 前端網頁工程師  
-📧 zu109520@gmail.com  
-🐙 [github.com/zu109520-arch](https://github.com/zu109520-arch)
