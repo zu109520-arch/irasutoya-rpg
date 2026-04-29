@@ -186,7 +186,7 @@ html, body {
 }
 
 .char-card--hero {
-    border: 3px solid #000000;
+    border: 2px solid #8b572a;
     background: #fffaf7;
     box-shadow: 0 8px 20px rgba(255, 99, 71, 0.2);
 }

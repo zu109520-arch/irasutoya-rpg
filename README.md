@@ -3,6 +3,7 @@
 一個以 Vanilla HTML / CSS / JavaScript 建構的 RPG 遊戲主題宣傳網站。
 
 **Live Demo：** [zu109520-arch.github.io/irasutoya-rpg](https://zu109520-arch.github.io/irasutoya-rpg)
+[![宅宅勇者大冒險](https://github.com/user-attachments/assets/58bffdc0-82a5-47bb-b867-36613cd3e724)](https://zu109520-arch.github.io/irasutoya-rpg/)
 
 ---
 
