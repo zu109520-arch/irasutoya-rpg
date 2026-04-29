@@ -25,35 +25,30 @@
     </header>
 
     <main class="content-wrapper">
-
-        <!-- INFO -->
         <section class="info-box">
             <h2 class="section-title">遊戲資訊</h2>
             <div class="inner-content">
                 <table class="info-table">
                     <tr><th>對應平台：</th><td>PC / PS5 / Nintendo Switch</td></tr>
                     <tr><th>遊戲類型：</th><td>冒險 RPG</td></tr>
-                    <tr><th>發售日期：</th><td>2026年 5月預定</td></tr>
+                    <tr><th>發售日期：</th><td>2026年06月預定</td></tr>
                 </table>
             </div>
         </section>
 
-        <!-- STORY -->
         <section class="info-box" id="story">
             <h2 class="section-title">劇情介紹</h2>
             <div class="inner-content">
             <img src="images/hero_cry.png" alt="劇情圖" style="width:100%; border-radius:10px; margin-bottom:15px;">
-            <p class="story-quote">某個平凡的午後，魔王突然現身，搶走了哥哥心愛的電腦。沒有了電腦，生活就沒意義！</p>
-            <p class="story-quote">為了能繼續玩電腦遊戲，宅宅哥哥決定帶著弟妹一起踏上尋找魔王的討回電腦冒險之旅!</p>
+            <p class="story-quote">某個平凡的下午，魔王突然現身搶走了宅宅哥哥心愛的電腦</p>
+            <p class="story-quote">沒有了電腦，生活就沒意義！為了能繼續玩電腦遊戲，宅宅哥哥決定帶著弟弟妹妹一起踏上尋找魔王的討回電腦冒險之旅!</p>
             </div>
         </section>
 
-        <!-- 登場人物 -->
         <section class="info-box" id="characters">
             <h2 class="section-title">登場人物</h2>
             <div class="characters-grid">
 
-                <!-- 妹妹（左） -->
                 <div class="char-card">
                     <div class="char-avatar">
                         <img src="images/sister.png" class="char-img" id="sister-pic" alt="妹妹">
@@ -71,7 +66,6 @@
                     </div>
                 </div>
 
-                <!-- 哥哥（中） -->
                 <div class="char-card char-card--hero">
                     <div class="char-avatar">
                         <img src="images/hero.png" class="char-img" id="hero-pic" alt="哥哥">
@@ -89,7 +83,6 @@
                     </div>
                 </div>
 
-                <!-- 弟弟（右） -->
                 <div class="char-card">
                     <div class="char-avatar">
                         <img src="images/brother.png" class="char-img" id="brother-pic" alt="弟弟">
@@ -109,7 +102,6 @@
             </div>
         </section>
 
-        <!-- 遊戲動畫 -->
         <section class="info-box" id="video">
             <h2 class="section-title">遊戲動畫</h2>
             <div class="video-wrapper">
@@ -120,36 +112,25 @@
             </div>
         </section>
 
-        <!-- 販售資訊 -->
         <section class="info-box" id="sales">
             <h2 class="section-title">販售資訊</h2>
             <div class="platforms-grid">
                 <div class="platform-card">
                     <div class="platform-img-placeholder">
-                        <img src="images/ps5.png" alt="PS5版封面" class="platform-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                        <div class="platform-placeholder-text" style="display:none">
-                            <span class="platform-icon">🎮</span>
-                            <span>PS5 版</span>
-                            <span class="platform-date">2026.05 發售預定</span>
-                        </div>
+                        <img src="images/ps5.png" alt="PS5版封面" class="platform-img">
                     </div>
                     <div class="platform-info">
                         <h4>PlayStation 5</h4>
-                        <p>2026.05 發售預定</p>
+                        <p>2026.06 發售預定</p>
                     </div>
                 </div>
                 <div class="platform-card">
                     <div class="platform-img-placeholder">
-                        <img src="images/switch.png" alt="Switch版封面" class="platform-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                        <div class="platform-placeholder-text" style="display:none">
-                            <span class="platform-icon">🕹️</span>
-                            <span>Switch 版</span>
-                            <span class="platform-date">2026.05 發售預定</span>
-                        </div>
+                        <img src="images/switch.png" alt="Switch版封面" class="platform-img">
                     </div>
                     <div class="platform-info">
                         <h4>Nintendo Switch</h4>
-                        <p>2026.05 發售預定</p>
+                        <p>2026.06 發售預定</p>
                     </div>
                 </div>
             </div>
@@ -157,7 +138,6 @@
 
     </main>
 
-    <!-- 事前登錄區 -->
     <div class="pre-reg-section">
         <div class="pre-reg-inner">
             <h3 class="pre-reg-title">⚔️ 冒險者事前登錄</h3>
@@ -217,7 +197,6 @@
             document.getElementById('reg-email').value = '';
         }
 
-        // 平滑滾動
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
