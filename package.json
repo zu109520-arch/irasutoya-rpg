@@ -1,0 +1,24 @@
+{
+  "name": "irasutoya-rpg-20260430",
+  "version": "1.0.0",
+  "description": "一個以 Vanilla HTML / CSS / JavaScript 建構的 RPG 遊戲主題宣傳網站。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zu109520-arch/irasutoya-rpg.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/zu109520-arch/irasutoya-rpg/issues"
+  },
+  "homepage": "https://github.com/zu109520-arch/irasutoya-rpg#readme",
+  "devDependencies": {
+    "prettier": "3.9.6"
+  }
+}
